@@ -1,0 +1,56 @@
+Overview of Azure Blob Storage:
+           Azure Blob Storage is a cloud-based service designed to store large amounts of unstructured data, such as text or binary data. This includes documents, images, videos, backups, and more.
+Blob Storage is highly scalable and can be accessed from anywhere via HTTP or HTTPS, making it ideal for applications that require storage of large files or data that doesn't fit into traditional database formats.
+
+Key Features:
+        Unstructured Data:Store any type of data without a predefined schema.
+        Scalability: Easily scale up or down based on your storage needs.
+        Accessibility: Access your data from anywhere in the world.
+        Cost-Effective: Pay for what you use, with various pricing tiers based on access frequency and redundancy options.
+
+Hands-On Task:
+Step 1: Create a Storage Account
+        Log into Azure Portal: Go to Azure Portal.
+        Create a Storage Account:Click on "Create a resource" > "Storage" > "Storage account".
+        Fill in the required fields:
+          Subscription: Choose your subscription.
+          Resource Group: Create a new one or select an existing resource group.
+          Storage Account Name: Provide a unique name (must be lowercase).
+          Region: Choose a region close to you.
+          Performance: Choose between Standard or Premium based on your needs.
+          Redundancy: Select your desired redundancy option (e.g., LRS, GRS).
+        Click "Review + Create" and then "Create".
+
+Step 2: Upload Files to a Blob Container
+        Navigate to Your Storage Account: Click on "Storage accounts" in the left-hand menu and select your newly created account.
+        Create a Blob Container:
+          Click on "Containers" under "Blob service".
+          Click "+ Container" to create a new container.
+          Set the Public access level to "Blob (anonymous read access for blobs only)".
+          Name your container (e.g., website).
+        Upload Files:
+          Click on the newly created container.
+          Click "Upload" and select your index.html file (or any other static files you want to include).
+          Click "Upload" to add the file to your container.
+
+Step 3: Set the Container for Public Access to Host a Static Website
+        Configure Static Website Hosting:
+          In your Storage Account, navigate to "Static website" under "Settings".
+          Click "Enabled" to enable static website hosting.
+          Set the Index document name to index.html.
+          Optionally, set an error document name if you have one (e.g., 404.html).
+        Click "Save".
+
+Step 4: Share the Website URL
+        Get the Website URL: After saving, you'll see the Primary endpoint for your static website.
+        This URL will look something like https://<your-storage-account-name>.blob.core.windows.net/$web/.
+        Access Your Website:You can now share this URL with others. They will be able to access your static website hosted on Azure Blob Storage.
+
+Conclusion:
+        By following these steps, you've successfully created an Azure Blob Storage account, uploaded files, enabled static website hosting, and shared your website URL.
+This process demonstrates how Azure Blob Storage can be utilized for hosting static websites with ease.
+
+
+
+
+
