@@ -1,0 +1,89 @@
+Day 15: Azure Policy!!
+
+Deploying an Azure Policy helps enforce compliance with organizational rules and regulations by ensuring that resources deployed to Azure meet specific standards. Here's a detailed step-by-step guide on how to deploy an Azure Policy:
+
+        **Step 1: Sign in to the Azure Portal**
+
+                     1.Open the Azure Portal:
+                          Go to https://portal.azure.com.
+                     2.Sign in with your Azure credentials.
+
+       **Step 2: Create a New Policy Definition**
+                 You can either use existing built-in policies or create a custom policy definition. Here's how to create a custom policy:
+
+                    1.Navigate to Azure Policy:
+                           In the Azure portal, search for Azure Policy in the search bar.
+                           Click on Azure Policy.
+                    2.Create a New Policy Definition:
+                           Under the Authoring section on the left pane, select Definitions.
+                           Click + Policy definition to create a new policy.
+                    3.Configure the Policy Definition:
+                           Display Name: Give a descriptive name to the policy (e.g., "Deny Resource Creation in Restricted Locations").
+                           Description: Write a short description explaining what the policy does.
+                           Policy Rule: The rule is written in JSON format. 
+                           Parameters: Define parameters if necessary (e.g., a list of allowed locations).
+                           Save the Policy: Click Save when the policy definition is ready.
+
+       **Step 3: Assign the Policy to a Scope**
+
+                Once the policy definition is created, you need to assign it to a scope (e.g., subscription, resource group, or management group).
+
+                    1.Go to Policy Assignments:
+                           In the Azure Policy service, click on Assignments from the left menu.
+                    2.Click on + Assign Policy:
+                           Click on + Assign Policy to start the policy assignment process.
+                    3.Select the Policy Definition:
+                           In the Policy Definition section, search for and select the policy you just created or choose a built-in policy.
+                    4.Choose the Scope:
+                          Scope defines where the policy will be applied:
+                               Management Group: Apply to multiple subscriptions.
+                               Subscription: Apply to all resources in the subscription.
+                               Resource Group: Apply to a specific resource group.
+                          Click on Select after choosing the scope.
+                    5.Configure Parameters:
+                          If your policy requires parameters (e.g., allowed locations), you’ll be prompted to configure them.
+                          For example, input a list of allowed locations for the policy.
+                    6.Assign the Policy:
+                          Optionally, you can Exclude certain resources or resource groups from this policy.
+                          Click Review + Create to review the configuration.
+                          Click Create to assign the policy.
+
+        **Step 4: Monitor Compliance**
+
+                 Once the policy is deployed, you can monitor compliance to see if the resources are adhering to the policy.
+                    1.View Compliance State:
+                         Go to Azure Policy and click on Compliance from the left menu.
+                         Here you can see the compliance state for your resources.
+                         Policies will show as either Compliant or Non-compliant.
+                    2.Drill into Non-compliant Resources:
+                         Click on the non-compliant resources to view which policy is violated.
+
+        **Step 5: Remediate Non-Compliant Resources (Optional)**
+
+                  If resources are non-compliant, you can use remediation tasks to fix them automatically.
+                    1.Create Remediation Task:
+                          In the Compliance section, click on Remediate next to the non-compliant policy.
+                          Choose the resources that need remediation.
+                          Click Remediate to bring those resources into compliance.
+
+       **Step 6: Update or Remove Policies (Optional)**
+
+                 As your needs evolve, you may need to update or remove policies.
+                     To Update: Edit the policy definition or assignment and click Save.
+                     To Remove: Go to Policy Assignments, select the assignment, and click Delete.
+
+       **Step 7: Review and Audit Policies Regularly**
+
+                 To maintain compliance with organizational standards, it’s important to review and update policies regularly. You can:
+                     1.Audit Policy Effectiveness: Review the compliance dashboard.
+                     2.Modify Policies: If new regulatory or organizational changes occur, modify the policies to reflect those changes.
+                     3.Extend Coverage: Apply policies to more resources, subscriptions, or management groups if necessary.
+
+By following these steps, you can efficiently deploy and manage Azure Policies, helping ensure that your resources are compliant with your organization’s governance and regulatory requirements.
+
+
+
+
+
+
+
