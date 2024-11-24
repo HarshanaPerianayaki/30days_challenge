@@ -1,0 +1,61 @@
+30_DaysChallenge !!
+Day 16: Azure Communication Services !!
+
+• Overview: Explain the use of communication services for sending and receiving emails or SMS.
+
+• Hands-On Task:
+        1. Set up Azure Communication Services.
+        2. Create an email identity and verify it.
+        3. Send a test email using the Azure portal or SDK.
+
+**Steps to Implement Azure Communication Services:**
+
+        **1. Set Up Azure Communication Services**
+              To set up ACS and use its email capabilities, follow these steps:
+
+                    1.Create an Azure Communication Services Resource:
+                             Log in to Azure Portal: Go to Azure Portal.
+                             Create a new Communication Services resource:
+                             In the left sidebar, click on Create a resource.
+                             In the Search box, type "Communication Services" and select Azure Communication Services.
+                             Click Create and fill in the necessary details:
+                                  Subscription: Select your Azure subscription.
+                                  Resource group: Either create a new resource group or use an existing one.
+                                  Name: Provide a unique name for your ACS resource.
+                                  Region: Choose a region where the service will be hosted.
+                                  Pricing tier: Choose the appropriate tier (usually the Standard tier for email/SMS).
+                             Click Review + Create and then click Create to deploy the resource.
+
+                             2.Obtain the Connection String:
+                                  Once the ACS resource is created, go to your newly created ACS resource in the portal.
+                                  Under Settings, click on Keys.
+                                  Copy the Connection String. You’ll need this for authentication when using the SDK or REST API.
+
+         **2. Create an Email Identity and Verify It**
+                  To send emails via ACS, you need to configure an email identity (the "From" email address) and verify it.
+
+                             1.Navigate to the Email Identity Section:
+                                   In the ACS resource settings, under Settings, find and click on Email.
+                                   Click on Create Email Identity.
+                                   Create and Verify an Email Identity:
+                                         Email address: Enter the email address you want to use for sending emails (e.g., no-reply@yourdomain.com).
+                                         Verification Type: Choose whether you want to verify a Custom Domain or a Single Email Address.
+                                         Single Email Address: Enter a valid email address.
+                                         Custom Domain: If you want to use a custom domain, you'll need to configure domain verification via DNS (you will get instructions).
+                                         Complete the Verification:
+                                   If using a Single Email Address, ACS will send a verification email to that address. You will need to click the verification link in the email to confirm ownership.
+                                   If using a Custom Domain, you'll need to add DNS records as specified to complete the verification.
+
+          **3.Send a Test Email Using the Azure Portal or SDK**
+                   Once the email identity is set up and verified, you can use either the Azure Portal or the SDK to send a test email.
+
+                              1.Send Email Using the Azure Portal
+                                    Go to the Email section in your ACS resource.
+                                    Click on Send Test Email.
+                                    Fill in the fields for the test email:
+                                          To: The recipient's email address.
+                                          Subject: The subject of the email (e.g., "Test Email").
+                                          Body: The body of the email (e.g., "This is a test email from Azure Communication Services").
+                                    Click Send to send the email.
+                                    If successful, the recipient should receive the email.
+
