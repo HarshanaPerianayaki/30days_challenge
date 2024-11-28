@@ -1,0 +1,99 @@
+Day 18: Azure VM with Apache Installation via Custom Script Extension !! 
+
+Steps Overview:
+     Create and configure an Azure VM.
+     Install Apache via Custom Script Extension.
+     Integrate Azure Monitor for VM health and performance monitoring.
+     Set up alerts for web server uptime, health, and CPU usage.
+
+          Step 1: Create and Configure an Azure VM
+                   You can create a VM using the Azure Portal, Azure CLI, or an ARM template. In this example, we'll use the Azure Portal for simplicity.
+
+                1.1 Create a Virtual Machine:
+                       Go to the Azure Portal and click on Create a resource.
+                       In the Search box, type "Virtual Machine" and click on it.
+                       Click Create and choose the following configuration:
+                               Subscription: Select your subscription.
+                               Resource Group: Create a new one or select an existing one.
+                               VM Name: Choose a name for your VM (e.g., MyApacheVM).
+                               Region: Choose your region (e.g., East US).
+                               Image: Select a Linux-based image (e.g., Ubuntu 20.04 LTS).
+                               Size: Choose an appropriate VM size (e.g., Standard B1s for testing).
+                               Authentication Type: Choose SSH public key or Password (based on your preference).
+                               Inbound Port Rules: Allow SSH (port 22) and HTTP (port 80) to access the server.
+                               Review + Create the VM and wait for it to be provisioned.
+
+          Step 2: Install Apache Using Custom Script Extension
+                  The Custom Script Extension is used to execute a script on a VM after it is created. This can be a script that installs Apache and starts the service.
+
+                  2.1 Prepare a Shell Script for Apache Installation
+                         Create a shell script file (e.g., install_apache.sh) that will install and start the Apache web server.
+
+                         # Update package index
+                         sudo apt update
+
+                         # Install Apache
+                         sudo apt install -y apache2
+
+                         # Start Apache service
+                         sudo systemctl start apache2
+
+                         # Enable Apache to start on boot
+                         sudo systemctl enable apache2
+
+                         # Confirm Apache status
+                         sudo systemctl status apache2
+
+                         You can save this script as install_apache.sh and upload it to a location accessible by Azure (like a public GitHub repository or an Azure Blob Storage container).
+
+                    2.2 Deploy the Custom Script Extension via Azure Portal
+                            Go to the Azure Portal and navigate to your newly created VM.
+                            In the VM’s menu, select Extensions + applications.
+                            Click Add and select Custom Script for Linux.
+                            Under Script file, provide the URI to your shell script. If it is hosted in a public GitHub repo, you can use the raw link, for example:
+                                  https://raw.githubusercontent.com/yourrepo/install_apache.sh
+                                  Or use an Azure Blob Storage URI if the script is uploaded there.
+                            Click Review + Create and then Create the extension.
+                            The script will execute, and Apache should be installed and running on the VM. You can verify it by SSHing into the VM:
+
+      Step 3: Integrate Azure Monitor for VM Health and Performance
+              Azure Monitor can collect and analyze performance data, health metrics, and logs from your VM. Here, we'll enable the Azure Monitor agent to collect data like CPU usage, disk I/O, and network activity.
+
+               3.1 Enable Monitoring
+                      Go to the Azure Portal and navigate to your VM.
+                      In the Monitoring section of the VM, select Insights.
+                      Click Enable to start collecting monitoring data for the VM. This enables the Azure Monitor Agent and starts collecting metrics such as:
+                        CPU usage
+                        Disk and network I/O
+                        Memory usage
+                        Uptime
+
+      Step 4: Set Up Alerts for Web Server Uptime, CPU Usage, and Health
+
+               4.1 Create Alerts for CPU Usage
+                      You can create an alert to notify you when CPU usage exceeds a specific threshold.
+                      In the Azure Monitor pane, select Alerts > + New alert rule.
+                      Select a resource: Choose your VM resource.
+                      Condition: Select Metric and choose the CPU usage metric.
+                      Condition: Choose "Greater than" and set a threshold (e.g., 80%).
+                      Action Group: Choose an existing action group or create a new one. This will define how the alert is sent (email, SMS, etc.).
+                      Alert Details: Name the alert, for example, High CPU Usage Alert.
+                      Click Create to set up the alert.
+
+              4.2 Create Alerts for Web Server Uptime
+                     You can set up a Heartbeat Alert to monitor the uptime of the Apache web server.
+                     Go to Azure Monitor > Alerts > + New alert rule.
+                     Select a resource: Choose the VM resource.
+                     Condition: Choose Heartbeat as the signal.
+                     Set a condition for the heartbeat, e.g., "not received" for a specific time range (e.g., if no heartbeat in the last 5 minutes).
+                     Action Group: Choose or create an action group (email, SMS, etc.).
+                     Alert Details: Name the alert (e.g., Apache Uptime Alert).
+                     Click Create.
+
+            4.3 Set Up Log Analytics for Detailed Logs (Optional)
+                    If you want detailed logs of Apache or any other application:
+                      Enable Diagnostics Logs:
+                          In the Azure portal, go to the VM.
+                          Under Monitoring, choose Diagnostics settings.
+                          Enable Send to Log Analytics workspace.
+                          Use Kusto Query Language (KQL) to query logs and create custom reports.
