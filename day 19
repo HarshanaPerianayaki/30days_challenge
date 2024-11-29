@@ -1,0 +1,104 @@
+30_DaysChallenge
+
+Day 19 : Hub and Scope Topology !! 
+
+1. Create a Virtual Networks:
+
+Step 1: Navigate to Virtual Network in menu bar [Located in top left corner of home] (or) you can search Virtual Netwrok in Search bar.
+Step 2: Select on CREATE to create a Vnet.
+Step 3: Enter the necessary details: 
+        a. Resource Group name
+        b. Vnet name.
+        c. Region.
+Step 4: Go to IP addresses and create a new address.
+Step 5: Then click on CREATE when you go to review+create.
+Step 6: Once depolyment is complete, go to resource to view your Vnet.
+Step 7: Repeat steps 1-6 for creating 3 more Vnets.
+
+2. Management Virtual Networks (HUB):
+
+2.1. Creating a Virtual Network Manager:
+
+Step 1: You can search Virtual Netwrok Manager in Search bar in the home page.
+Step 2: Click on to "CREATE".
+Step 3: Enter the necessary details:
+      -> First create a new "RESOURCE GROUP".
+      -> Network Manager name.
+      -> Region.
+      -> Features.
+Step 3: Choose both the feature "CONNECTIVITY & SECURITY ADMIN":
+Step 4: Choose the scope [FREE TRIAL] in the next page and go to "REVIEW+CREATE".
+Step 5: Click on "CREATE". Then go to the resource to view your Virtual Network Manager.
+
+
+2.2. Creating Virtual Networks:
+Step 6: Now you need to create some Vnets based on your requirment and choose the same resource group which you used it for Network Manager. 
+Step 7: Give different IP addresss fot each Vnet so it doesn't overlap and add tags if you want to.
+
+
+2.3. Creating Virtual Network Gateway:
+Step 8: You can search Virtual Netwrok Gateway in Search bar in the home page.
+Step 9: Click on to "CREATE".
+Step 10: Enter the necessary details:
+      -> Choose the "RESOURCE GROUP" same as for above 2.
+      -> Network Gateway name
+      -> Virtual Network
+      -> Region
+      -> VPN type
+      -> SKU
+      -> Generatio: either 1 (or) 2.
+      -> Publib IP address name
+Step 11: Go to "REVIEW+CREATE". Then, click on "CREATE".
+Step 12: Once depolyment is complete, go to the resource to view your Virtual Network Gateway.
+
+
+
+2.4. Creating Network Groups in the Network Manager:
+Step 13: Now go to the Network Manager resource, click on "NETWORK GROUP" in the settings for Network group creation.
+Step 14: Enter the name and select the member type as "VIRTUAL NETWORK". Then, click on "Create".
+Step 15: When you go into the the NETWORK GROUP you created, click on add Vnets to add members manually.
+Step 16: You can add the Vnets manually.
+
+
+
+2.5. Creating Configurations in the Network Manager:
+Step 17: Now go to the Network Manager resource, click on "CONFIGURATIONS" in the settings for Connectivity configuration creation.
+Step 18: Enter the name. Then, go to Topolgy you will be able to view two topologies:
+      -> Mesh
+      -> Hub and Scope - choose this one.
+Step 19: Then, select the Vnet which you want it to be as the HUB.
+Step 20: Now click on "ADD NETWROK GROUPS" to add the netwrok group. Then, click on "ENNABLE CONNECTIVITY WITHIN NETWORK GROUP".
+Step 21: Go to "REVIEW+CREATE". Then, click on "CREATE".
+
+
+
+2.6. Deploying the configurations:
+Step 22: Choose the "CONNECTIVITY CONFIGURATION" like give a name to it.
+Step 23: Select the "REGION".
+Step 24: Go to "REVIEW+DEPLOY". Then, click on "DEPLOY".
+
+3. Testing the Connectivity:
+
+3.1. Creating a Virtual Machine In Windiows***
+
+Step 1: Go to search and search VIRTUAL MACHINE.
+Step 2: Click on the "WINDOWS" to create one VM in the WINDOWS.
+Step 3: Enter the following details:
+      -> Resource Group: the same as above.
+      -> Virtual Machine name
+      -> Region
+      -> Image
+      -> Size
+      -> In administrator account : enter Username, password and Confirm Password.
+      -> Disable the Public inbound ports.
+Step 4: Go to NETWORKING, select the Vnet. Automatically a new IP will be created.
+Step 5: Click on "REVIEW + CREATE".
+Step 6: once reviewed, click on "CREATE" to create the Virtual Machine.
+Step 7: Once deployment is complete, you can click on go to resource to view the Virtual Machine.
+
+NOW,
+Step 8: Go to NETWORKING in the VMs settings.
+Step 9: Click on the "NETWORK INTERFACE CARD" and go to "HELP" to view the "EFFECTIVE ROUTES"
+--------This VM is inside the HUB.
+Step 10: Go to the Vnet which you choosed it as HUB.
+Step 11: Go to "PEERINGS" and we can confirm that the Vnets are successfully connected.
