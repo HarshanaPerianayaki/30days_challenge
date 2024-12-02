@@ -1,0 +1,56 @@
+30_DaysChallenge!!
+
+Day 20: Implement Intersite Connectivity in Azure !!
+
+Implementing intersite connectivity in Azure allows you to securely connect multiple on-premises networks or Azure Virtual Networks (VNets) across different locations.
+Here’s a step-by-step guide to set it up:
+
+**Steps to Implement Intersite Connectivity:
+
+     1. Site-to-Site VPN
+        This method uses an IPsec/IKE tunnel.
+
+        Create a Virtual Network and Subnet:
+            In the Azure portal, go to Virtual Networks > Create.
+            Define the address space and subnets.
+
+        Deploy a Virtual Network Gateway:
+            Go to Virtual Network Gateways > Create.
+            Choose VPN as the gateway type and SKU based on your performance needs.
+
+        Create a Local Network Gateway:
+            Specify your on-premises network details (public IP and address space).
+
+        Configure a VPN Connection:
+            Go to the Virtual Network Gateway > Connections > Add.
+            Choose Site-to-Site and provide the shared key (same as on-premises VPN).
+
+        On-Premises Configuration:
+            Set up the IPsec/IKE connection on your local router or firewall.
+
+   2. VNet-to-VNet Connectivity
+        There are two options: VNet Peering or VPN Gateway.
+
+        Option 1: VNet Peering (Recommended for low latency)
+                  Go to one VNet > Peerings > Add.
+                  Configure the peering settings and repeat for the other VNet.
+
+        Option 2: VPN Gateway
+                  Deploy a VPN Gateway in each VNet.
+                  Create a connection between the gateways using the IPsec/IKE protocol.
+
+   3. ExpressRoute
+        Use for high-performance, private connections.
+
+        Set up an ExpressRoute Circuit:
+             In the Azure portal, go to ExpressRoute > Create.
+             Choose a service provider and specify bandwidth.
+
+        Link VNets to ExpressRoute:
+             Go to the ExpressRoute Gateway > Connections.
+             Attach your VNets using Virtual Network Gateway.
+
+  4. Hybrid Setup (VPN + ExpressRoute)
+        Set up ExpressRoute for primary connectivity.
+        Configure a VPN Gateway as a backup route.
+        
