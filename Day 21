@@ -1,0 +1,46 @@
+Day 21 : Azure Data Factory !!
+
+Here’s a high-level overview of how you can access and use Azure Data Factory in the Azure portal:
+
+      1. Access Azure Data Factory in Azure Portal
+         Open the Azure Portal
+         select "Create a resource".
+         search for "Data Factory" and click create.
+         Fill in the necessary fields:
+                Subscription: Choose the Azure subscription.
+                Resource group: Select an existing resource group or create a new one.
+                Region: Select the region where you want to deploy your data factory.
+                Name: Provide a unique name for your Data Factory.
+         After filling in the details, click "Review + Create", then "Create" to provision the Data Factory instance.
+
+      2. Navigate to Data Factory Dashboard
+         After the creation process, go to the Resource group where your Data Factory instance was created.
+         Select the Data Factory instance.
+         Once inside the Data Factory resource, you'll be directed to the Data Factory Studio, which is the main interface for designing, monitoring, and managing data workflows.
+
+      3. Azure Data Factory Studio
+         Inside the Azure Data Factory dashboard, click on "Author & Monitor" to open the Data Factory Studio.
+         Author: This is where you design and create data pipelines.
+         Create pipelines, which define data flow and transformation steps.
+         Define activities (such as copying data, running data transformations, or executing stored procedures).
+         Monitor: This is where you can monitor the execution of your data pipelines, view pipeline runs, and troubleshoot any failures.
+         Manage: Here you can configure linked services (connections to data sources), datasets, and triggers.
+
+      4. Building Data Pipelines
+         In the Author section, you can design your pipelines using drag-and-drop activities.
+         Source and Sink: Define where the data is coming from and where it should go (e.g., Azure Blob Storage, SQL Server, etc.).
+         Transformations: Use data flow or mapping data flows to transform your data during the process.
+         You can schedule the pipelines to run automatically or trigger them based on events.
+
+      5. Linking to Data Sources (Linked Services)
+         You’ll need to set up Linked Services to connect to different data sources (SQL databases, Azure storage, etc.).
+         Go to the Manage section and choose Linked Services.
+         Add a new linked service by choosing the data source you want to connect to and providing the necessary authentication details.
+
+      6. Triggering Pipelines
+         After creating your pipeline, you can set up Triggers to execute your pipeline on a schedule, or you can use manual triggers.
+         In the Monitor tab, you can review the status of pipeline executions, check for failures, and examine detailed logs.
+
+      7. Monitoring Pipelines
+         In the Monitor section of Data Factory Studio, you can track the progress of your pipelines. You can see the status of each run (success, failure), view error messages, and check the execution times.
+         You can also view activity runs for detailed monitoring of individual tasks within a pipeline.
