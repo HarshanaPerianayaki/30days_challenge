@@ -1,0 +1,68 @@
+Steps to Access and Use Azure Advisor in the Azure Portal
+
+     1. Navigate to Azure Advisor
+           
+           Step 1: Go to the Azure Portal.
+           Step 2: In the left-hand menu, click on "All services".
+           Step 3: In the "All services" search box, type "Azure Advisor" and select it from the list.
+           Step 4: Alternatively, you can search for "Advisor" directly in the top search bar of the Azure portal.
+           Step 5: Once selected, you will be directed to the Azure Advisor dashboard, which provides a summary of recommendations.
+ 
+     2. Overview of Azure Advisor Dashboard
+
+          The Azure Advisor dashboard shows a summary of all your resource recommendations, categorized into 5 pillars of best practices:
+               Cost: Recommendations to reduce unnecessary spending.
+               Security: Suggestions to improve the security posture of your resources.
+               Reliability: Recommendations to enhance the availability and fault tolerance of your services.
+               Performance: Guidance to enhance the speed and efficiency of your resources.
+               Operational Excellence: Best practices for managing and monitoring your resources.
+          Each recommendation has a severity level: High, Medium, or Low, helping you prioritize them.
+
+     3. Review and Act on Recommendations
+
+          Step 1: On the Azure Advisor dashboard, you'll see a list of recommendations grouped by the above categories.
+          Step 2: Click on any of the recommendations to view detailed insights. Each recommendation provides:
+                    Description of the issue or improvement.
+                    Impact of the issue (e.g., potential cost savings or security risk).
+                    Actionable steps to resolve or improve the situation.
+         Step 3: For each recommendation, you can either:
+                    Take Action: Follow the recommended steps, such as resizing a virtual machine, enabling backups, or adjusting security settings.
+                    Dismiss: If you don’t find the recommendation relevant, you can dismiss it.
+
+    4. Filter and Prioritize Recommendations
+
+         You can filter the recommendations by:
+             Category: Focus on one specific area, like Cost, Security, etc.
+             Severity: Prioritize based on High, Medium, or Low severity.
+             Resource: Filter by resource types (e.g., virtual machines, storage accounts).
+             Subscription: If you manage multiple subscriptions, you can focus on a specific subscription.
+         These filters allow you to tailor the recommendations to the most critical areas for your organization.
+
+    5. Take Action on Recommendations
+
+         For each recommendation, Azure Advisor provides the option to directly apply changes to your resources where possible. For example:
+            Cost: It may recommend switching to a lower-cost VM size or removing unused resources.
+            Security: It may advise enabling Azure Security Center or configuring firewalls.
+            Performance: It may suggest adding more instances or configuring auto-scaling.
+            Reliability: It could recommend setting up Azure Availability Zones for fault tolerance.
+         Click on "Apply" or "Go to Resource" to directly take action or navigate to the resource.
+
+   6. View Recommendations Across Multiple Subscriptions
+
+        If you manage multiple subscriptions, you can view recommendations for all of them in one place.
+        Step 1: Go to the Subscriptions tab in the Azure Advisor dashboard.
+        Step 2: Select or add the subscriptions you want to review.
+        This feature is particularly useful for enterprise administrators who oversee several subscriptions.
+
+   7. Get Email Notifications for Advisor Recommendations
+
+        You can enable notifications to get recommendations sent directly to your email, which helps ensure you don't miss out on important suggestions.
+        Step 1: Go to Azure Advisor.
+        Step 2: Under the Settings section, click on Notifications.
+        Step 3: Enable notifications for recommendations based on your preference (e.g., for Cost, Security, etc.).
+
+   8. Export Recommendations
+
+        Step 1: If you need to share or keep a record of recommendations, you can export them to a CSV file.
+        Step 2: On the Azure Advisor dashboard, click Export at the top right corner.
+        Step 3: Select the recommendations you want to export and download them as a CSV file.
