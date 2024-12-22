@@ -1,0 +1,40 @@
+Day 24 !!
+
+Here's a step-by-step guide to using Azure Managed Identity in the Azure portal:
+
+Enable Managed Identity in Azure Portal
+
+For System-Assigned Managed Identity:
+
+   1.Navigate to the Azure Resource:
+        Go to the Azure portal and select the resource (e.g., Virtual Machine, App Service) you want to enable Managed Identity for.
+
+   2. Enable the Identity:
+        In the resource menu, select Identity under Settings.
+        Toggle the System-assigned Managed Identity switch to "On."
+        Click Save.
+
+   3.Assign Permissions:
+        Go to Azure Role Assignments (or IAM) in the Azure portal.
+        Assign the required roles to the Managed Identity (e.g., Reader, Contributor, or a custom role).
+
+For User-Assigned Managed Identity:
+
+   1.Create a User-Assigned Managed Identity:
+        In the Azure portal, search for Managed Identities and select + Add.
+        Configure the name, subscription, resource group, and location, then click Create.
+
+   2.Assign the Identity to a Resource:
+        Go to the Azure resource where you want to assign the identity.
+        Under Identity, select User-assigned and click + Add.
+        Select the Managed Identity you created and click Add.
+
+   3.Assign Permissions:
+        Similar to system-assigned identities, assign the appropriate roles to this Managed Identity.
+
+Use Managed Identity to Authenticate
+   1.Access Azure Services:
+        Use the identity to access supported Azure services like Key Vault, Storage Accounts, or SQL Database without managing secrets.
+
+   2.Azure SDK Support:
+        Azure SDKs and tools like REST API, Azure CLI, or PowerShell can authenticate using the Managed Identity.
