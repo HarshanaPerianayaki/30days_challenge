@@ -1,0 +1,82 @@
+Day 23 !!
+
+To create and manage a bot using Azure Bot Service in the Azure Portal, follow these steps:
+
+   Step 1: Sign in to the Azure Portal
+           Go to the Azure Portal and sign in with your Microsoft account or Azure Active Directory account.
+
+   Step 2: Create a New Bot Service
+           Navigate to the "Create a resource" option:
+           On the Azure Portal home page, click on "Create a resource" in the left-hand menu.
+           Search for "Azure Bot"
+           Select Azure Bot:
+           In the search results, click on "Azure Bot". This will take you to the "Azure Bot" creation page.
+           Create the Bot:
+           Click on "Create" to start the process of creating a new bot.
+
+   Step 3: Configure the Bot
+           In the Create Azure Bot page, you'll need to configure the following details:
+           Subscription:
+               Choose the Azure subscription you want to use for the bot.
+           Resource Group:
+                Either select an existing Resource Group or create a new one. A resource group helps organize all related Azure resources (e.g., your bot service, storage, etc.) under one container.
+           Bot Name:
+                Enter a unique Bot Name. This will be used as part of the bot’s endpoint URL.
+           Region:
+                Select the Region where the bot will be hosted. The region you select should ideally be closest to your users for optimal performance.
+           Pricing Tier:
+                Select a pricing tier. For example, the F0 (Free) tier is suitable for experimentation and small-scale bots, but for production bots, you may want to select a paid tier.
+           Microsoft App ID and Password:
+                App ID: If you're using Azure Active Directory for authentication, create a Microsoft App registration, which generates an App ID.
+                App Password: You'll need to create a secret key (password) for your bot in the App Registration section in Azure Active Directory.
+                Alternatively, you can let Azure generate the App ID and Password for you, or you can skip this step if your bot doesn’t require authentication.
+           Bot Template:
+                Choose a Bot Template to kickstart your bot development:
+                Basic Bot: A minimal bot template with basic functionality.
+                Echo Bot: A simple bot that echoes back whatever the user says.
+                Question and Answer Bot: A bot that answers questions based on a knowledge base.
+                Other templates might be available for specific scenarios (e.g., FAQ bot, language understanding bot).
+           Storage:
+                You can either enable Application Insights for analytics (which helps monitor bot performance and user interactions) or leave it disabled for now.
+
+    Step 4: Review and Create
+            After filling out the necessary information, review your selections.
+            Click "Create" to deploy the bot.
+
+    Step 5: Configure and Develop the Bot
+            Once your bot is created, you can configure additional settings, deploy the bot code, and integrate with other services (e.g., LUIS for natural language understanding or QnA Maker for knowledge-based answers).
+            Access the Bot Service:
+                Go to the "Resource" page of your new bot after it's created. This will open the bot's dashboard.
+            Bot Management:
+                You can manage your bot’s channels, configure the bot’s settings, and view its analytics on this page.
+            Develop Your Bot:
+                Click on the "Build" section to start working on your bot.
+                You can upload code or work directly with tools like Visual Studio or Visual Studio Code to write your bot’s functionality.
+                If you're using a template, you can customize it based on your needs.
+
+    Step 6: Test the Bot
+            Test in the Azure Portal:
+            You can test your bot directly from the Azure Portal by using the Test in Web Chat feature under the Bot Channels Registration section.
+            It opens a web chat interface where you can interact with your bot.
+            Bot Framework Emulator:
+                 For a more robust local testing experience, download the Bot Framework Emulator to simulate conversations on your local machine.
+
+   Step 7: Deploy the Bot
+           Publish the Bot:
+           After developing and testing your bot, you can deploy it to Azure via Visual Studio, Azure CLI, or GitHub Actions for CI/CD.
+           You can also configure different channels (such as Teams, Slack, Facebook Messenger) to deploy the bot on multiple platforms.
+
+   Step 8: Monitor and Analyze
+           Monitor Performance:
+           In the Azure Portal, you can set up Application Insights to track user interactions and monitor your bot’s health and performance.
+           Bot Analytics:
+                Review metrics like user engagement, user retention, and conversation success rates to improve the bot’s performance over time.
+
+   Step 9: Add Cognitive Services (Optional)
+           Enhance with Cognitive Services:
+           If desired, you can enhance the bot’s capabilities by integrating services like LUIS (for natural language processing) or QnA Maker (for FAQ-style bots).
+           Set up the Language Understanding (LUIS) model from within the Azure Bot Service and connect it with your bot for intelligent conversations.
+
+   Step 10: Set Up Channels
+            Channel Configuration:
+            After deploying the bot, configure it to interact with users across different channels. Channels like Teams, Slack, Facebook Messenger, and more can be connected directly from the Channels section in the bot's Azure dashboard.
