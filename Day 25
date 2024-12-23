@@ -1,0 +1,81 @@
+Day 25 !!
+
+Here’s a step-by-step guide on how to create and deploy an application using Azure Kubernetes Service (AKS) via the Azure Portal.
+
+Steps to Create an AKS Cluster on Azure Portal:
+
+1. Create an AKS Cluster
+   Login to Azure Portal:
+   Go to Azure Portal.
+   Navigate to AKS:
+   In the left sidebar, search for "Kubernetes services" in the search bar.
+   Click on "Kubernetes services" under the "Services" section.
+   Create a New AKS Cluster:
+       Click on + Add or + Create at the top of the AKS page to create a new Kubernetes cluster.
+       Configure the AKS Cluster: In the "Create Kubernetes cluster" wizard, fill in the following information:
+           Subscription: Choose the Azure subscription.
+           Resource Group: Either create a new resource group or select an existing one.
+           Kubernetes Cluster Name: Provide a unique name for your AKS cluster.
+           Region: Select the Azure region where you want the AKS cluster to be deployed (e.g., East US, West Europe).
+           Kubernetes Version: Select the desired Kubernetes version (you can leave it as default).
+           Node Size: Choose the virtual machine size (VMs) for your Kubernetes nodes (e.g., Standard DS2 v2).
+           Node Count: Set the initial number of nodes for your cluster (e.g., 3).
+           Authentication: Configure the authentication method for your AKS cluster (e.g., using Azure Active Directory (AAD) for access control).
+           After entering the details, click Next: Node pools.
+
+  Configure Node Pools:
+      Node pools are the virtual machines that run your Kubernetes workloads.
+      You can leave the default node pool settings or configure them based on your requirements.
+      Choose the VM size, disk size, and other configurations for the node pool.
+
+  Configure Networking:
+      Select Networking to configure how the Kubernetes network will function.
+      You can choose between Basic networking (simplified setup) or Advanced networking (custom VNETs, subnets, etc.).
+      You can also enable features like Network Policies and Azure CNI (Container Networking Interface) if you need specific networking features.
+
+  Configure Monitoring (optional):
+      You can enable Azure Monitor and Azure Log Analytics for monitoring and logging purposes.
+
+  Review + Create:
+      Review the configurations you've set for the AKS cluster.
+      If everything looks good, click Create to start the deployment.
+
+2. Deploy an Application to AKS
+    After the AKS cluster is created, you can deploy containerized applications to it. Below is how you can do this:
+    Get AKS Cluster Credentials:
+        Once the AKS cluster is deployed, navigate to the Kubernetes Cluster in the Azure portal.
+        Under Cluster Dashboard, click Connect to retrieve the command for configuring the kubectl CLI to interact with the AKS cluster.
+        Use Azure CLI or Azure Cloud Shell to configure access:
+             az aks get-credentials --resource-group <resource-group-name> --name <aks-cluster-name>
+        Expose the Application (Create a Service):
+           To expose your application to the outside world, you need to create a Kubernetes service. You can expose the Nginx app using the following YAML file (e.g., nginx-service.yaml):
+                     apiVersion: v1
+                     kind: Service
+                     metadata:
+                        name: nginx-service
+                     spec:
+                        selector:
+                           app: nginx
+                      ports:
+    -                   protocol: TCP
+                           port: 80
+                           targetPort: 80
+                      type: LoadBalancer
+
+        Verify the Deployment:
+            To check the status of your application, run the following command:   
+                kubectl get pods
+    
+3. Monitor and Manage the AKS Cluster
+   Monitor the AKS Cluster:
+      You can enable Azure Monitor for Containers to track the health and performance of your cluster and containers.
+      View the metrics, logs, and other performance-related data through the Azure Portal.
+      Scale the AKS Cluster:
+           You can scale the number of nodes in your AKS cluster directly from the Azure Portal:
+                Go to the Kubernetes Cluster.
+                Click on Node pools and then select the node pool.
+                Change the Node count or scale settings as needed.
+
+4. Clean Up
+    When you are finished with your AKS test or application, remember to delete the resources to avoid incurring charges.
+    You can delete the AKS cluster and the associated resource group directly from the Azure Portal.
