@@ -1,0 +1,65 @@
+Day 27 : Azure Sentinel !!
+
+Here’s a step-by-step guide to set up and use Azure Sentinel in the Azure Portal:
+
+    Step 1: Log in to the Azure Portal
+            Navigate to Azure Portal.
+            Sign in with your Azure account credentials.
+
+    Step 2: Create or Use a Log Analytics Workspace
+            Azure Sentinel requires a Log Analytics workspace to store and analyze data.
+            In the Azure Portal, search for "Log Analytics workspaces" in the search bar.
+            Click "Create".
+            Fill in the following details:
+                 Subscription: Select your subscription.
+                 Resource Group: Create a new one or use an existing one.
+                 Workspace Name: Provide a unique name.
+                 Region: Choose a region close to your operations.
+            Click Review + Create and then Create.
+
+    Step 3: Enable Azure Sentinel
+            In the Azure Portal, search for "Azure Sentinel" in the search bar.
+            Click "Create" or "Add".
+            Select your Log Analytics workspace from the dropdown.
+            Click Add Azure Sentinel.
+
+    Step 4: Connect Data Sources
+            Azure Sentinel can ingest data from various sources like Azure services, on-premises environments, and third-party applications.
+            In the Azure Sentinel Overview page, go to Data connectors.
+            Browse available connectors (e.g., Azure Active Directory, Microsoft Defender, Office 365, or custom logs).
+            Select a connector and click Open connector page.
+            Follow the instructions to configure the data source:
+            Authenticate to the source.
+            Set permissions.
+            Enable data ingestion.
+
+    Step 5: Create and Customize Analytics Rules
+            In the Azure Sentinel menu, navigate to Analytics.
+            Click + Create to add a new rule.
+            Choose a template or create a custom query.
+            Define:
+               Rule Name: Provide a meaningful name.
+               Severity: Set the severity level (Informational, Low, Medium, High).
+               Thresholds: Define thresholds or conditions for alerts.
+            Save the rule.
+
+    Step 6: Monitor Alerts
+            Navigate to the Incidents tab in Azure Sentinel.
+            View and investigate generated alerts.
+            Drill down into specific incidents to analyze root causes and impacts.
+
+    Step 7: Automate Responses (SOAR)
+            Go to the Automation tab in Azure Sentinel.
+            Click + Create a playbook.
+            Use Azure Logic Apps to design automated workflows triggered by security incidents:
+            Examples: Blocking an IP, sending notifications, isolating a device.
+            Save and activate the playbook.
+
+    Step 8: Visualize Data with Workbooks
+            In the Workbooks tab, view pre-built dashboards or create custom ones.
+            Use visualizations to track metrics like login attempts, suspicious activities, or threat trends.
+
+    Step 9: Monitor Sentinel Performance
+            Use Azure Monitor to keep track of Log Analytics workspace usage.
+            Set up budget alerts for cost control.
+            Would you like guidance on integrating Azure Sentinel with specific tools (e.g., Splunk, Palo Alto, or AWS), or configuring a custom detection rule?
