@@ -1,0 +1,52 @@
+Day 26 : Azure Data Lake !!
+
+Here’s a step-by-step guide to set up and explore Azure Data Lake in the Azure Portal:
+
+     Step 1: Log in to the Azure Portal
+             Navigate to Azure Portal.
+             Use your Azure credentials to sign in.
+
+     Step 2: Create a Data Lake Storage Account
+             In the Azure Portal, search for "Storage accounts" in the search bar and click on it.
+             Click "Create".
+             Fill in the details:
+                Subscription: Select the appropriate subscription.
+                Resource Group: Create a new one or use an existing one.
+                Storage Account Name: Provide a unique name.
+                Region: Select the region closest to your operations.
+                Performance: Choose Standard or Premium based on your needs.
+                Redundancy: Select redundancy options (e.g., LRS, GRS).
+                Under the Advanced tab:
+                   Enable Data Lake Storage Gen2 by checking the box for Hierarchical namespace.
+                Click Review + Create and then Create.
+
+     Step 3: Set Up the Data Lake
+             Once the storage account is created, go to its Overview page.
+             Navigate to Containers under the Data storage section.
+             Create a new container:
+             Click + Container.
+               Provide a name (e.g., data-lake).
+               Set the Public Access Level (private by default).
+             Click Create.
+
+     Step 4: Upload Data to the Data Lake
+             Open the newly created container.
+             Click on Upload.
+             Browse and select files from your local machine to upload.
+             Click Upload.
+
+     Step 5: Manage Access and Permissions
+             In the container, go to Access Control (IAM).
+             Add roles like Storage Blob Data Contributor or Storage Blob Data Reader to grant appropriate access.
+             Alternatively, use Shared Access Signatures (SAS) for temporary access.
+
+     Step 6: Query Data with Azure Synapse or Data Factory
+             Azure Synapse Analytics:
+                 Create a Synapse workspace.
+                 Connect to your Data Lake storage account to query the data using SQL.
+             Azure Data Factory:
+                 Use Data Factory to orchestrate ETL (Extract, Transform, Load) pipelines with Data Lake as the source or destination.
+
+     Step 7: Monitor and Optimize
+             Use Azure Monitor to track storage utilization and performance.
+             Set up lifecycle management policies to automate data tiering (e.g., move infrequently accessed data to lower-cost storage tiers).
