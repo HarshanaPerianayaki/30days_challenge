@@ -1,0 +1,62 @@
+Day 28 : Azure IoT Hub !! 
+
+Here’s a step-by-step guide to set up and explore Azure IoT Hub in the Azure Portal:
+
+    Step 1: Log in to Azure Portal
+            Go to Azure Portal.
+            Sign in with your Azure account.
+
+    Step 2: Create an IoT Hub
+            In the Azure Portal, search for "IoT Hub" in the search bar and select it.
+            Click + Create.
+            Fill in the required fields:
+                Subscription: Choose your Azure subscription.
+                Resource Group: Select an existing resource group or create a new one.
+                IoT Hub Name: Provide a unique name for your IoT Hub.
+                Region: Choose a location for the hub.
+                Pricing and Scale Tier: Select a tier based on your needs (e.g., Free, Basic, or Standard).
+            Click Review + Create and then Create.
+
+    Step 3: Access the IoT Hub
+            After deployment, navigate to the IoT Hub in the Azure Portal.
+            In the Overview section, you can see key details like Hostname, Resource Group, and Location.
+
+    Step 4: Add IoT Devices
+            In the IoT Hub menu, go to Devices under the Explorers section.
+            Click + New Device.
+            Provide the following details:
+                Device ID: Enter a unique identifier for your device.
+                Authentication Type: Choose between symmetric key, self-signed, or CA-signed certificates.
+                Auto-generate Keys: Enable this for automatic generation of primary and secondary keys.
+            Click Save.
+
+    Step 5: Get Device Connection String
+            After creating the device, select it from the device list.
+            Copy the Primary Connection String from the device details. This will be used to connect your IoT device to the IoT Hub.
+
+    Step 6: Simulate an IoT Device
+            You can test your IoT Hub by simulating a device:
+              Using Azure CLI:
+                 Install the Azure IoT extension:
+                       az extension add --name azure-iot
+            Simulate a device message:
+                       az iot device simulate --device-id <YourDeviceID> --hub-name <YourIoTHubName>
+            Using a Python SDK:
+                 Install the Azure IoT SDK for Python:
+                       pip install azure-iot-device
+            Write a Python script to send data to IoT Hub using the connection string.
+
+    Step 7: Monitor Messages in IoT Hub
+            Go to Message Routing in the IoT Hub menu.
+            Set up a default route to monitor incoming messages.
+            Use the Azure IoT Explorer tool to view messages or connect an Azure Storage account for persistent storage.
+
+    Step 8: Integrate IoT Hub with Other Services
+            Azure Stream Analytics: Process real-time data from IoT devices.
+            Azure Time Series Insights: Visualize time-series data from IoT devices.
+            Azure Event Grid: Automate workflows based on IoT events.
+
+    Step 9: Secure and Scale IoT Hub
+            Use Azure Defender for IoT to enhance security.
+            Manage access with Azure Active Directory (AAD) roles.
+            Scale your IoT Hub based on the number of devices and messages.
