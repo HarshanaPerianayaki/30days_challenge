@@ -1,0 +1,75 @@
+Day 29 : Azure Stream Analytics !!
+
+Here’s how to set up and use Azure Stream Analytics in the Azure Portal:
+
+     Step 1: Log in to Azure Portal
+             Go to Azure Portal.
+             Sign in with your Azure credentials.
+
+     Step 2: Create a Stream Analytics Job
+             Search for "Stream Analytics jobs" in the search bar and select it.
+             Click + Create.
+             Provide the following details:
+                 Subscription: Select your Azure subscription.
+                 Resource Group: Choose an existing resource group or create a new one.
+                 Job Name: Enter a unique name for the job.
+                 Region: Select a region close to your data source.
+                 Hosting Environment: Choose Cloud (default) unless you are using on-premises Edge devices.
+            Click Review + Create and then Create.
+
+    Step 3: Configure Inputs
+            Navigate to your newly created Stream Analytics job in the Azure Portal.
+            Go to the Inputs tab and click + Add stream input.
+            Choose your data source type:
+                 IoT Hub: For IoT device data.
+                 Event Hub: For real-time event data.
+                 Blob Storage: For batch processing from storage.
+            Fill in the required details based on your input source:
+                 For IoT Hub or Event Hub, provide the connection details.
+                 For Blob Storage, specify the storage account and container.
+
+    Step 4: Configure Outputs
+            Go to the Outputs tab and click + Add.
+            Select an output destination:
+                 Azure SQL Database: For structured data storage.
+                 Power BI: For real-time visualization.
+                 Blob Storage: For raw data archiving.
+                 Event Hub: For downstream processing.
+                 Data Lake: For big data storage and analytics.
+            Provide the necessary connection details for your chosen output destination.
+
+    Step 5: Write the Query
+            Navigate to the Query tab.
+            Write a SQL-like query to process and analyze the data:
+            Example Query: Filter events where temperature exceeds 30°C.
+                      SELECT
+                          DeviceId,
+                          Temperature,
+                          EventTime
+                      FROM
+                          InputStream
+                      WHERE
+                          Temperature > 30
+            Save the query.
+
+    Step 6: Start the Job
+            Go to the Overview tab.
+            Click Start to begin processing the data streams.
+            Choose Now or specify a start time and click Start.
+
+    Step 7: Monitor the Job
+            Navigate to the Monitoring tab.
+            Use metrics like Input Events, Output Events, and Errors to track performance.
+            Set up alerts in the Alerts section to notify you of any issues.
+
+    Step 8: Optimize the Job
+            Use Streaming Units (SUs) to allocate resources for your job.
+            Adjust the number of SUs based on the job's complexity and input size.
+
+    Step 9: Test and Debug
+            Use the Test Query feature in the Query tab to simulate results before starting the job.
+            Check the Job Diagram for a visual representation of your data flow.
+
+    Step 10: Scale and Automate
+             Use Azure Resource Manager (ARM) templates for deployment automation.
+             Integrate with Azure Data Factory for scheduled processing workflows.
