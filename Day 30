@@ -1,0 +1,62 @@
+Day 30 : Azure Machine Learning !!
+
+Here's a guide on how to use Azure Machine Learning within the Azure Portal:
+
+    1. Getting Started with Azure Machine Learning
+       Sign in to Azure Portal: Go to Azure Portal and log in with your Microsoft account.
+
+       Create an Azure Machine Learning Workspace:
+       Search for "Azure Machine Learning" in the top search bar of the portal.
+       Click on "Azure Machine Learning" and select + Create.
+       Fill in the required details like Subscription, Resource Group, Workspace Name, and Region.
+       Click Review + Create and then Create.
+
+    2. Working with Azure ML Studio
+       Once your workspace is set up, you can navigate to Azure Machine Learning Studio from the portal. The Studio provides a visual interface for managing resources, creating experiments, and training models. You can open it by:
+       Navigating to the Azure Machine Learning Workspace.
+       Click on Launch Studio to enter the web-based Azure Machine Learning interface.
+
+   3. Key Components in Azure Machine Learning
+      Azure ML Workspace is organized into several key areas:
+           Datasets: Store and manage your data. You can upload, register, and version datasets.
+           Experiments: Run training scripts and track machine learning experiments.
+           Compute: Set up compute clusters or individual virtual machines (VMs) for model training.
+           Models: Register and manage your trained machine learning models.
+           Environments: Define and share Python environments with dependencies for model training.
+           Endpoints: Deploy your trained models as web services for real-time inference.
+           Pipelines: Create workflows to automate and manage the machine learning lifecycle.
+ 
+  4. Creating a New Machine Learning Experiment
+     Navigate to the "Experiments" tab in Azure Machine Learning Studio.
+     Select + New to create a new experiment.
+     Choose whether to create a Jupyter notebook or a script-based experiment.
+     You can use pre-built models or bring your custom code for training.
+     Run the experiment using the specified compute resources.
+
+ 5. Training Models
+    Azure ML allows training models in a variety of ways:
+    Using AutoML: Azure Machine Learning’s AutoML feature helps you automatically choose the best algorithm and hyperparameters for your model. You can access AutoML via the portal under Automated ML.
+    Custom Training: Write custom training scripts using frameworks like TensorFlow, PyTorch, and Scikit-learn. You can execute them on Azure ML Compute clusters.
+    You can monitor the training process in the Run section, where you can track metrics like accuracy, loss, and training duration.
+
+ 6. Deploying Models
+    Once your model is trained, you can deploy it as a web service:
+    Go to the "Models" section and select the model you want to deploy.
+    Click "Deploy" and choose the deployment option (e.g., ACI for Azure Container Instances, AKS for Azure Kubernetes Service).
+    Define the scoring script and environment for deployment.
+    Once deployed, you can use the endpoint to perform real-time inference.
+
+ 7. Monitoring and Managing Models
+    Azure ML provides tools to monitor the performance and health of deployed models through the Endpoints section.
+    You can view logs, track model usage, and update or retrain models as necessary.
+
+ 8. Azure ML Notebooks and Jupyter Notebooks
+    In the Azure Machine Learning Studio, you can use Notebooks (Jupyter notebooks) to write Python code for data exploration, training, and model evaluation.
+    Create and edit notebooks under the Notebooks section, using the powerful compute resources in your workspace.
+
+ 9. Security and Permissions
+    Ensure that your workspace and data are secure by managing user roles and permissions. You can set role-based access control (RBAC) in the Azure portal to restrict who can access or modify different aspects of your machine learning projects.
+
+10. Azure ML Pipelines
+    Pipelines allow you to automate your machine learning workflows. You can define a series of steps (like data preprocessing, model training, evaluation, etc.) and create a repeatable process.
+    Pipelines can be built visually in Azure ML Studio or coded using Python SDK.
